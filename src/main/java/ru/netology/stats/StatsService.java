@@ -12,9 +12,11 @@ public class StatsService {
         return sum;
     }
 
-    public int averageAmount(int[] sales) {//среднее
-        return sumSales(sales) / sales.length;
+    public int averageAmountAverageSales(int[] sales) { //среднее
+        int sum = sumSales(sales);
+        int average = sum / sales.length;
 
+        return average;
 
     }
 
@@ -42,10 +44,10 @@ public class StatsService {
         return maxMonth + 1; // месяца нумеруются с 1, а индексы массива с 0, нужно сдвинуть ответ на 1
     }
 
-    public int AboveAverageAmount(int[] sales) { //выше среднего
+    public int aboveAverageAmount(int[] sales) { //выше среднего
         int maxMonthSale = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageAmount(sales)) {
+            if (sales[i] > averageAmountAverageSales(sales)) {
                 maxMonthSale++;
             }
         }
@@ -54,15 +56,19 @@ public class StatsService {
 
     }
 
-    public int BelowAverageAmount(int[] sales) { //ниже  среднего
+    public int belowAverageAmount(int[] sales) { //ниже  среднего
         int minMonthSale = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageAmount(sales))
+            if (sales[i] < averageAmountAverageSales(sales))
                 minMonthSale++;
 
         }
         return minMonthSale;
     }
 }
+
+
+
+
 
 
