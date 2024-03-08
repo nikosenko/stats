@@ -19,12 +19,12 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void shouldCalculateAverageAmount() {//среднее
+    public void shouldCalculateAverageAmountSales() {//среднее
         StatsService service = new StatsService();
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expected = 15;
-        int actual = service.averageAmount(sales);
+        int actual = service.averageAmountAverageSales(sales);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -57,7 +57,7 @@ public class StatsServiceTest {
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.AboveAverageAmount(sales);
+        int actual = service.aboveAverageAmount(sales);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -68,7 +68,7 @@ public class StatsServiceTest {
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expected = 5;
-        int actual = service.BelowAverageAmount(sales);
+        int actual = service.belowAverageAmount(sales);
         Assertions.assertEquals(expected, actual);
     }
 }
