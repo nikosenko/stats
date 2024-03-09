@@ -46,8 +46,9 @@ public class StatsService {
 
     public int aboveAverageAmount(int[] sales) { //выше среднего
         int maxMonthSale = 0;
+        int average = averageAmountAverageSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > averageAmountAverageSales(sales)) {
+            if (sales[i] > average) {
                 maxMonthSale++;
             }
         }
@@ -58,8 +59,9 @@ public class StatsService {
 
     public int belowAverageAmount(int[] sales) { //ниже  среднего
         int minMonthSale = 0;
+        int average = averageAmountAverageSales(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < averageAmountAverageSales(sales))
+            if (sales[i] < average)
                 minMonthSale++;
 
         }
